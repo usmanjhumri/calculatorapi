@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 app.use(json());
 app.post("/calculate", (req, res) => {
+  res.json(req.body);
   const { num1, num2, operator } = req.body;
   let result;
   switch (operator) {
