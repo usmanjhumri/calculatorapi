@@ -1,10 +1,11 @@
 import express from "express";
 import json from "body-parser";
+import cors from "cors";
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3001;
 app.use(json());
 app.post("/calculate", (req, res) => {
-  // res.json(req.body);
   const { num1, num2, operator } = req.body;
   let result;
   switch (operator) {
